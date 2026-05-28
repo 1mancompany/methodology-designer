@@ -1,0 +1,9 @@
+# Tool manifest — declare tools this agent can use
+# This talent uses the host platform's built-in `run_debate` and
+# `select_debate_participants_tool` (provided by the OMC AutoResearch
+# pipeline runtime), so no MCP servers or custom tools are declared here.
+
+# builtin_tools:
+#   - Read
+#   - Write
+#   - Bash
