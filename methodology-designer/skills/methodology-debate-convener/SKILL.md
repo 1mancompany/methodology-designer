@@ -312,13 +312,39 @@ section has any disqualifier, the critic will REJECT.
 - ❌ Vague verbs ("study", "explore") without operationalisation.
 - ❌ Multiple unrelated questions smuggled in.
 
-#### 2. Hypotheses + Variables
+#### 2. Hypotheses, Variables, and Empirical Claims
 - ✅ H1 primary hypothesis explicitly stated, falsifiable, directional.
 - ✅ Optional H2/H3 secondary, each independently testable.
 - ✅ IV/DV/control variables with **operational measurement**
   (e.g. "cycle time = `merged_at` − `created_at` from GitHub API, median per team").
 - ✅ Notation table if you use mathematical symbols (X, Y, T, …).
+- ✅ **Empirical Claims List** (this is what Stage 5 reads to decide
+  how many sub-experiments to design — list as many as the paper
+  needs, no fixed minimum):
+  ```
+  ## Empirical Claims (drives Stage 5 sub-experiment count)
+
+  - **C1**: <one-sentence empirical statement the paper will make>
+  - **C2**: ...
+  - **Cn**: ...
+  ```
+  Each `Ci` is **one sentence** of the form "the paper will demonstrate
+  that <X> under conditions <Y>". The list is the contract between
+  Stage 4 and Stage 5: every `Ci` MUST end up backed by a
+  sub-experiment in Stage 5. There is no minimum or maximum; pick the
+  number that this specific methodology actually needs. Typical CCF-A
+  papers have 3–7 claims (headline result + a few baselines + maybe a
+  sweep or an ablation), but bespoke designs may have fewer or more.
+  Examples of valid claims, drawn from real CCF-A papers, NOT
+  prescriptive:
+  - "C1: method A outperforms method B by ≥ 5pp on benchmark X."
+  - "C2: the gain in C1 persists across model scales 7B / 13B / 70B."
+  - "C3: removing component Z from method A drops accuracy by ≥ 2pp."
+  - "C4: method A is robust to temperatures in [0.1, 1.0]."
+  Use whatever the paper actually needs; the list is not a template.
 - ❌ "Performance" or "quality" without a measurement procedure.
+- ❌ Empty / missing Empirical Claims List. Stage 5 cannot design
+  sub-experiments without it.
 
 #### 3. Experimental Design (largest section — bulk of CCF-A scrutiny)
 - ✅ Chosen design named precisely (cluster RCT, observational + PSM, etc.).
