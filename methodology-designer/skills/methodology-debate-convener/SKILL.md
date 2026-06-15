@@ -301,7 +301,7 @@ NeurIPS reviewer grade** — not "structurally complete" but "would pass peer
 review at a top venue". The critic (`methodology-quality-critic` skill)
 scores against the same criteria you should write to.
 
-### The 8 required sections — CCF-A criteria per section
+### The 9 required sections — CCF-A criteria per section
 
 Each section below has **must-haves** (✅) and **disqualifiers** (❌). If a
 section has any disqualifier, the critic will REJECT.
@@ -390,6 +390,30 @@ This is unique to AutoResearch — the critic will literally search the
 methodology for transcript citations.
 - ✅ At least 2 places where a methodology decision quotes/paraphrases a named participant.
 - ❌ Decisions appear without grounding in transcript — signals you wrote in a vacuum.
+
+#### 9. Method Formalization & Contributions (D11/D12 — hard gates)
+A methodology must formalize the METHOD itself, not only how it will be
+tested. The Stage 4 critic hard-gates D11 (Method Formalization) and D12
+(Contribution & Novelty); a shallow methodology with no math, no
+algorithm, or no novelty claim is REJECTED.
+- ✅ **Formal definition with equations** — state the method/objective in
+  real mathematics: the objective/loss function, the key quantities, and
+  any derivation or complexity claim, in LaTeX (`$...$` inline, `$$...$$`
+  displayed). A reader must be able to reimplement from the equations.
+  Decorative notation (`$\alpha = 0.05$` alone) is NOT enough.
+- ✅ **Pseudocode / Algorithm block** — at least one numbered Algorithm
+  (Input / Output / numbered steps) for the core procedure, so the method
+  is unambiguous and implementable.
+- ✅ **Contributions / Novelty statement** — an explicit, specific
+  statement of what is NEW versus prior work (why this is a contribution,
+  not a trivial recombination), grounded in the Stage 2/3 claim IDs. Not
+  "to the best of our knowledge we are the first…" boilerplate.
+- ❌ No equations / no objective formalized → D11 FAIL.
+- ❌ No pseudocode for a proposed method → D11 FAIL. (A pure comparison
+  study with no proposed method is exempt from pseudocode but must still
+  formalize its estimands/metrics, and is NOT exempt from D12.)
+- ❌ No contributions/novelty statement, or a vague one any paper could
+  copy → D12 FAIL.
 
 ### Writing-style rules (D9 will check these — bake them in here)
 
